@@ -10,5 +10,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'byebug'
 gem 'ember-appkit-rails', github: 'dockyard/ember-appkit-rails'
+gem 'byebug'
+gem 'm'
+gem 'capybara'
+gem 'minitest-spec-rails', '~> 4.7.4'
+gem 'fivemat'
+
+gem 'poltergeist'
+# faye-websocket has to be locked at 0.4.7 to ensure compatibility with poltergeist
+gem 'faye-websocket', '~> 0.4.7'
