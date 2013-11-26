@@ -14,6 +14,7 @@ gem 'ember-appkit-rails', github: 'dockyard/ember-appkit-rails'
 gem 'byebug'
 gem 'm'
 gem 'capybara'
+gem 'capybara_minitest_spec'
 gem 'minitest-spec-rails', '~> 4.7.4'
 gem 'fivemat'
 
