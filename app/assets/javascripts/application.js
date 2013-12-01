@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 
 //= require jquery
 //= require ember-app
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

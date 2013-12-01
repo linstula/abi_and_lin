@@ -6,7 +6,6 @@ class JoinUsTest < ActionDispatch::IntegrationTest
       visit root_path
       click_on 'JOIN US!'
       page.must_have_content 'Join Us'
-      current_path.must_equal('/join_us')
     end
   end
 end

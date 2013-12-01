@@ -10,6 +10,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'foundation-rails'
+gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 gem 'ember-appkit-rails', github: 'dockyard/ember-appkit-rails'
 gem 'byebug'
 gem 'm'

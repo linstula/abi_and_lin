@@ -1,11 +1,19 @@
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: 32c16cb90f78053310b35199a970c53355bcd300
+  branch: rails4-hack
+  specs:
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: git://github.com/dockyard/ember-appkit-rails.git
-  revision: 4aff7987687aea79f2e59cddfab39b0685b869b9
+  revision: dc84f5d8829b02a44589c7fa8bbeebd083f1d589
   specs:
     ember-appkit-rails (0.1.1)
       ember-data-source (~> 1.0.0.beta.3)
       ember-rails (>= 0.14.0)
-      ember-source (~> 1.2.0)
+      ember-source (~> 1.2.0.1)
       es6_module_transpiler-rails (~> 0.1.0)
       rails (~> 4.0.0)
 
@@ -57,8 +65,13 @@ GEM
     capybara_minitest_spec (1.0.1)
       capybara (>= 2)
       minitest (>= 2)
+    chunky_png (1.2.9)
     cliver (0.2.2)
     columnize (0.3.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     debugger-linecache (1.2.0)
     ember-data-source (1.0.0.beta.3)
       ember-source
@@ -71,8 +84,8 @@ GEM
       handlebars-source
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
-    ember-source (1.2.0)
-      handlebars-source (= 1.1.1)
+    ember-source (1.2.0.1)
+      handlebars-source (~> 1.1.2)
     erubis (2.7.0)
     es6_module_transpiler-rails (0.1.0)
       execjs
@@ -81,7 +94,11 @@ GEM
     faye-websocket (0.4.7)
       eventmachine (>= 0.12.0)
     fivemat (1.2.1)
-    handlebars-source (1.1.1)
+    foundation-rails (5.0.2.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
+    fssm (0.2.10)
+    handlebars-source (1.1.2)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -172,9 +189,11 @@ DEPENDENCIES
   byebug
   capybara
   capybara_minitest_spec
+  compass-rails!
   ember-appkit-rails!
   faye-websocket (~> 0.4.7)
   fivemat
+  foundation-rails
   jbuilder (~> 1.2)
   jquery-rails
   m
