@@ -1,8 +1,24 @@
-<h1>Application</h1>
-{{link-to 'HOME' 'index'}}
-{{link-to 'JOIN US!' 'join_us'}}
-{{link-to 'THE PARTY' 'the_party'}}
-{{link-to 'STUFF TO DO' 'stuff_to_do'}}
-{{link-to 'LOGISTICS' 'logistics'}}
-{{link-to 'RSVP' 'rsvp'}}
+<div class='row'>
+  <h1>Application</h1>
+</div>
+
+<div id='main' class='row'>
+  <nav class="top-bar" data-topbar>
+    <section class="top-bar-section">
+      <ul class='left-nav'>
+        <li>{{link-to 'HOME' 'index'}}</li>
+      </ul>
+      <ul class='center-nav'>
+        <li>{{link-to 'JOIN US!' 'join_us'}}</li>
+        <li>{{link-to 'THE PARTY' 'the_party'}}</li>
+        <li>{{link-to 'STUFF TO DO' 'stuff_to_do'}}</li>
+        <li>{{link-to 'LOGISTICS' 'logistics'}}</li>
+      </ul>
+      <ul class='right'>
+        <li>{{link-to 'RSVP' 'rsvp'}}</li>
+      </ul>
+    </section>
+  </nav>
 {{outlet}}
+</div>
+
