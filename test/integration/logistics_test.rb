@@ -5,7 +5,7 @@ class LogisticsTest < ActionDispatch::IntegrationTest
     it 'can be visited' do
       visit root_path
       click_on 'LOGISTICS'
-      page.must_have_content 'LOGISTICS'
+      page.must_have_content 'Logistics'
     end
   end
 end
