@@ -1,2 +1,2 @@
-class GuestsController < ApplicationController
+class Api::V1::GuestsController < ApplicationController
 end

@@ -5,7 +5,7 @@ class JoinUsTest < ActionDispatch::IntegrationTest
     it 'can be visited' do
       visit root_path
       click_on 'JOIN US!'
-      page.must_have_content 'Join Us'
+      page.must_have_content 'Join us in celebrating the joy of Abi and Lin’s love'
     end
   end
 end

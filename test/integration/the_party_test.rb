@@ -6,7 +6,7 @@ class PartyTest < ActionDispatch::IntegrationTest
       visit root_path
       click_on 'THE PARTY'
 
-      page.must_have_content 'The Party'
+      page.must_have_content 'July 27th'
     end
   end
 end

@@ -6,7 +6,7 @@ class StuffToDoTest < ActionDispatch::IntegrationTest
       visit root_path
       click_on 'STUFF TO DO'
 
-      page.must_have_content 'Stuff To Do'
+      page.must_have_content "Homer is a fisherman’s town"
     end
   end
 end

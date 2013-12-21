@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20131221182634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: true do |t|
+    t.string "name",  null: false
+    t.string "email"
+  end
+
+  create_table "guests", force: true do |t|
+    t.integer "group_id",       null: false
+    t.string  "name",           null: false
+    t.string  "rsvp_status"
+    t.string  "visit_duration"
+  end
 
 end
