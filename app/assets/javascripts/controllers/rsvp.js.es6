@@ -1,10 +1,21 @@
 export default Ember.ArrayController.extend({
   actions: {
     selectGroup: function(group) {
-      var guests = this.store.find('guest', { group_id: group.id } )
+      var guests = this.get('guests').filterBy('group', group)
       this.set('group', group);
       this.set('liveQuery', group.get('name'));
+      this.set('groupSelected', true);
       if (this.get('foundGuests') == []) { this.set('foundGuests', guests);}
+    },
+
+    saveRSVP: function(group) {
+      var guests = this.get('foundGuests'), group = this.get('group')
+      var _this = this;
+
+      group.save();
+      guests.forEach(function(guest) {
+        guest.save();
+      });
     }
   },
 
@@ -16,7 +27,8 @@ export default Ember.ArrayController.extend({
     });
 
     if (this.groups.filterBy('name', this.get('liveQuery')).length != 1) {
-      this.set('foundGuests', '')
+      this.set('foundGuests', '');
+      this.set('groupSelected', false);
     }
 
     if (this.liveQuery) {

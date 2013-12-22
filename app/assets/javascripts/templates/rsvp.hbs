@@ -3,18 +3,21 @@
   <div class='row'>
     <div class='large-4 columns'>
       <h5>Group name</h5>
-      {{input name='Group name' placeholder='You group name as it appears on your invitation' value=liveQuery action=liveSearch on=keyPress}}
+      {{input placeholder='You group name as it appears on your invitation' value=liveQuery action=liveSearch on=keyPress}}
     </div>
   </div>
   <div class='row'>
     <div id='left-column' class ='large-4 columns'>
      {{#if foundGroups}}
-        {{#each group in foundGroups}}
-          <div>
-            <a {{action 'selectGroup' group}}>{{group.name}}</a>
-          </div>
-          <h2>{{group.name}}</h2>
-        {{/each}}
+       {{#unless groupSelected}}
+         {{#each group in foundGroups}}
+             <a {{action 'selectGroup' group}}>
+               <div class='group-search-result'>
+                 {{group.name}}
+               </div>
+             </a>
+         {{/each}}
+       {{/unless}}
      {{/if}}
 
     </div>
@@ -24,6 +27,7 @@
           {{#each guest in foundGuests}}
              <h3>{{guest.name}}</h3>
           {{/each}}
+          <button {{action 'saveRSVP'}}>RSVP</button>
         {{/if}}
       </div>
     </div>
