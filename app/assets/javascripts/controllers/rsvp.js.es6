@@ -8,14 +8,15 @@ export default Ember.ArrayController.extend({
       if (this.get('foundGuests') == []) { this.set('foundGuests', guests);}
     },
 
-    saveRSVP: function(group) {
+    submitRSVP: function(group) {
       var guests = this.get('foundGuests'), group = this.get('group')
-      var _this = this;
 
       group.save();
       guests.forEach(function(guest) {
         guest.save();
       });
+
+      this.set('rsvpSubmitted', true);
     }
   },
 

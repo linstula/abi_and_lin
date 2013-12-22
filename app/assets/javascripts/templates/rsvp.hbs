@@ -1,35 +1,59 @@
 <div id='rsvp-main'>
   <h1 class='page-heading'>RSVP</h1>
   <div class='row'>
-    <div class='large-4 columns'>
-      <h5>Group name</h5>
-      {{input placeholder='You group name as it appears on your invitation' value=liveQuery action=liveSearch on=keyPress}}
-    </div>
-  </div>
-  <div class='row'>
-    <div id='left-column' class ='large-4 columns'>
-     {{#if foundGroups}}
-       {{#unless groupSelected}}
-         {{#each group in foundGroups}}
-             <a {{action 'selectGroup' group}}>
-               <div class='group-search-result'>
-                 {{group.name}}
-               </div>
-             </a>
-         {{/each}}
-       {{/unless}}
-     {{/if}}
-
-    </div>
-    <div id='right-column' class ='large-8 columns'>
-      <div>
-        {{#if foundGuests}}
-          {{#each guest in foundGuests}}
-             <h3>{{guest.name}}</h3>
-          {{/each}}
-          <button {{action 'saveRSVP'}}>RSVP</button>
-        {{/if}}
+    <div id='left-column' class ='large-6 columns'>
+      <div class='row'>
+        <div class='large-9 columns'>
+          <h5>Group name</h5>
+          {{input placeholder='You group name as it appears on your invitation' value=liveQuery action=liveSearch on=keyPress}}
+          {{#if foundGroups}}
+            {{#unless groupSelected}}
+              <div class='group-search-box'>
+                {{#each group in foundGroups}}
+                    <a {{action 'selectGroup' group}}>
+                      <div class='group-search-result'>
+                        {{group.name}}
+                      </div>
+                    </a>
+                {{/each}}
+              </div>
+            {{/unless}}
+          {{/if}}
+        </div>
       </div>
+
+      <div class='row'>
+        <div class='large-12 guest-results'>
+            {{#if foundGuests}}
+              <table class='guest-table'>
+                <thead>
+                  <tr>
+                    <td>Guest</td>
+                    <td>rsvp</td>
+                    <td>Trip Duration</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each guest in foundGuests}}
+                    <tr>
+                      <td>{{guest.name}}</td>
+                      <td>{{view Ember.Select content=rsvpOptions value=guest.rsvpStatus}}</td>
+                      <td>{{view Ember.Select content=visitDurationOptions value=guest.visitDuration}}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+              <button class='rsvp-button' {{action 'submitRSVP'}}>RSVP</button>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+    <div id='right-column' class='large-6 columns rsvp-text'>
+      {{#unless rsvpSubmitted}}
+        <h1>These are the RSVP instructions.</h1>
+      {{else}}
+        <h1>Thanks for RSVPing!</h1>
+      {{/unless}}
     </div>
   </div>
 </div>
