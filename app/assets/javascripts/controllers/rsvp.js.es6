@@ -22,6 +22,7 @@ export default Ember.ArrayController.extend({
 
   liveSearch: function() {
     var _this = this
+    this.set('rsvpSubmitted', false);
     var searchResults = this.groups.filter(function(group, index, self) {
       var search = _this.get('liveQuery').toLowerCase(), name = group.get('name').toLowerCase()
       if (name.match(search)) { return true; }
