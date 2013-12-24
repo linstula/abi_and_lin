@@ -24,7 +24,11 @@
 
       <div class='row'>
         <div class='large-12 guest-results'>
-            {{#if foundGuests}}
+          {{#if foundGuests}}
+          <div class='large-9 columns'>
+              <h5>Group email</h5>
+              {{input placeholder='Contact email for your group' value=group.email }}
+          </div>
               <table class='guest-table'>
                 <thead>
                   <tr>
