@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     controller.set('guests', this.store.find('guest'));
     controller.set('groupSelected', false);
     controller.set('rsvpSubmitted', false);
-    controller.set('rsvpOptions', [null, "Heck Yes!", "No way, jose!"]);
-    controller.set('visitDurationOptions', [null, "Just the day of the wedding.", "The whole week."]);
+    controller.set('rsvpOptions', [null, "Accept with pleasure", "Decline with regret", 'Accept with regret', 'Decline with pleasure']);
+    controller.set('visitDurationOptions', [null, "Just the day of the wedding.", "The whole week!"]);
   }
 });
